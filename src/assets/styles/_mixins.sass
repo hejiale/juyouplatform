@@ -1,0 +1,183 @@
+@charset "UTF-8"
+@import "variables"
+// = 是 @mixin 的简写
+
+// triangle
+=triangle($direction, $size, $borderColor)
+  content: ""
+  height: 0
+  width: 0
+  @if $direction == top
+    border-bottom: $size solid $borderColor
+    border-left: $size dashed transparent
+    border-right: $size dashed transparent
+  @else if $direction == right
+    border-left: $size solid $borderColor
+    border-top: $size dashed transparent
+    border-bottom: $size dashed transparent
+  @else if $direction == bottom
+    border-top: $size solid $borderColor
+    border-left: $size dashed transparent
+    border-right: $size dashed transparent
+  @else if $direction == left
+    border-right: $size solid $borderColor
+    border-top: $size dashed transparent
+    border-bottom: $size dashed transparent
+
+@function vw($n) 
+  @return ($n / 1440)*100vw
+
+@function vh($n) 
+  @return ($n / 1024)*100vh
+
+// 禁止选中
+=no-select
+  user-select: none
+
+// 超出一行显示省略号
+=text-overflow
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+=text-overflow-line($line: 2)
+  text-overflow: ellipsis
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: $line
+  // 超出2行显示省略号的样式有个 -webkit-box-orient: vertical 的属性
+  // 但打包出来之后被移除了
+  // 添加autoprefixer: off可以保持不被移除
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical
+
+=text-overflow-twoLine
+  display: -webkit-box
+  overflow: hidden
+  text-overflow: ellipsis
+  word-break: break-all
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: 2
+
+// 绝对居中
+=abscenter
+  position: absolute
+  margin: auto
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+// 清除浮动
+=clearfix
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+=circle
+  border-radius: 50%
+
+=rect($w)
+  width: $w
+  height: $w
+
+=circle($w)
+  @include rect($w)
+  border-radius: 50%
+
+=vertical($w)
+  height: $w
+  line-height: $w
+
+// 水平排列
+=hor
+  display: flex
+  flex-flow: row
+  flex-wrap: nowrap
+
+// hor-水平方向-垂直方向
+=hor-center-center
+  @include hor
+  justify-content: center
+  align-items: center
+
+=hor-between-center
+  @include hor
+  justify-content: space-between
+  align-items: center
+
+=hor-around-center
+  @include hor
+  justify-content: space-around
+  align-items: center
+
+=hor-start-center
+  @include hor
+  justify-content: flex-start
+  align-items: center
+
+=hor-end-center
+  @include hor
+  justify-content: flex-end
+  align-items: center
+
+// 垂直排列
+=ver
+  display: flex
+  flex-direction: column
+
+// ver-水平方向-垂直方向
+=ver-center-center
+  @include ver
+  align-items: center
+  justify-content: center
+
+=ver-center-between
+  @include ver
+  align-items: center
+  justify-content: space-between
+
+=ver-start-center
+  @include ver
+  align-items: flex-start
+  justify-content: center
+
+=setBackground($path)
+  background: url($path) no-repeat center / 100% 100%
+
+// flex 固定宽度
+=fixed-width($w)
+  width: $w
+  max-width: $w
+  min-width: $w
+
+=hide-scroll
+  -ms-overflow-style: none
+  overflow: -moz-scrollbars-none
+  &::-webkit-scrollbar
+    width: 0
+
+=one-image-upload ($w: 100px)
+  line-height: 0
+  .el-upload
+    border: 1px dashed #d9d9d9
+    border-radius: 6px
+    cursor: pointer
+    position: relative
+    overflow: hidden
+    &:hover
+      border-color: #409EFF
+  .el-icon-plus
+    font-size: 28px
+    color: #8c939d
+    width: $w
+    height: $w
+    line-height: $w
+    text-align: center
+  .img
+    display: block
+    width: $w
+    height: $w
+

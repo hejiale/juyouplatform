@@ -1,0 +1,197 @@
+@charset "UTF-8"
+@import "font", "scaffold", "transition"
+
+*
+  box-sizing: border-box
+
+body
+  min-width: 1200px
+  line-height: 1.5
+  font-family: $font-family
+  font-size: $fontNormal
+  color: $black
+  background: #F0F0F0
+
+ul, li, ol
+  margin: 0
+  padding: 0
+  list-style: none
+
+p
+  margin: 0
+  padding: 0
+
+input[type="number"]
+  -moz-appearance: textfield
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.success
+  color: $green !important
+.danger
+  color: $red !important
+.del
+  color: #8B8EAB !important
+.pending
+  color: #D98C32 !important
+.processed
+  color: #1890FF !important
+.reject
+  color: #D9001B !important
+.pass
+  color: #36971E !important
+.pendinglight
+  color: rgba(250,162,30,1 ) !important
+  font-weight: 700
+.table-img
+  width: 50px
+  cursor: zoom-in
+  height: 50px
+
+.mr24
+  margin-right: 24px
+.ml24
+  margin-left: 24px
+.mt24
+  margin-top: 24px
+.mb24
+  margin-bottom: 24px
+.wid200
+  width: 200px
+
+.page
+  padding: $defaultGap
+
+.base-topBtn
+  text-align: right
+  // margin-bottom: 10px
+.table-topBtn
+  text-align: right
+  padding: 10px 20px
+  background: #fff
+  border-radius: 8px
+.base-form
+  background-color: #fff
+  border-radius: 8px
+  padding: 20px 40px
+  .el-input, .el-textarea
+    width: 375px
+  .el-input-number .el-input
+    width: auto
+.content-submit
+  text-align: center
+  line-height: 80px
+  .el-button + .el-button
+    margin-left: 30px
+.more-info
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  .el-button:first-child
+    margin-left: 10px
+.el-popover
+  min-width: 80px
+.el-popover__reference-wrapper
+  .el-icon-more
+    margin-left: 10px
+
+.search-button_color
+  color: #ee2222
+.copyButton
+  background: rgba(255, 255, 255, 0)
+  border: none
+  cursor: pointer
+.textTable
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+  width: 100px
+.point
+  cursor: pointer
+.table-row-status
+  @include hor-center-center
+  &-enable
+    padding: 5px 12px
+    background: #E3F9E9
+    border-radius: 3px
+    font-size: 14px
+    font-family: PingFang SC-Regular, PingFang SC
+    font-weight: 400
+    color: #2BA471
+    @include hor-center-center
+    border: 1px solid #2BA471
+  &-disable
+    padding: 5px 12px
+    background: #FFEDEE
+    border-radius: 3px
+    font-size: 14px
+    font-family: PingFang SC-Regular, PingFang SC
+    font-weight: 400
+    color: #D54941
+    @include hor-center-center
+    border: 1px solid #E34D59
+  &-waitAudit
+    padding: 5px 12px
+    background: #fff
+    border: 1px solid #3662EC
+    border-radius: 3px
+    font-size: 14px
+    font-family: PingFang SC-Regular, PingFang SC
+    font-weight: 400
+    color: #3662EC
+    @include hor-center-center
+  &-unPass
+    padding: 5px 12px
+    background: #fff
+    border: 1px solid #999999
+    border-radius: 3px
+    font-size: 14px
+    font-family: PingFang SC-Regular, PingFang SC
+    font-weight: 400
+    color: #999999
+    @include hor-center-center
+  &-reject
+    padding: 5px 12px
+    background: #F3F3F3
+    border-radius: 3px
+    font-size: 14px
+    font-family: PingFang SC-Regular, PingFang SC
+    font-weight: 400
+    color: #181818
+    @include hor-center-center
+
+@each $var in (0, 30, 40, 45, 100)
+  $val: #{$var + '%'}
+  .w#{$var}
+    width: $val
+
+.form-text_overflow
+  @include text-overflow
+  word-break: break-all
+  display: block
+.text-overflow-line
+  @include text-overflow-line
+  word-break: break-all
+::-webkit-scrollbar
+  width: 0
+  height: 0
+  display: none
+body::-webkit-scrollbar
+  width: 0px
+  height: 10px
+  display: block
+  overflow-y: hidden
+  overflow-x: scroll
+body::-webkit-scrollbar-thumb
+  width: 10px
+  height: 10px
+  background: #C0C4CC
+  border-radius: 8px

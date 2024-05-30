@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>剧游平台管理后台</title>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+      color: transparent;
+    }
+
+    .canClick {
+      cursor: pointer;
+    }
+
+    .imageStyle {
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="margin: 0;padding: 0;">
+  <noscript>
+    <strong>We're sorry but juyou-html-pc doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div>
+    <!-- <image id="backgournd2" style="display: block;" src="./backgournd2.jpg" class="imageStyle"
+      mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+    </image>
+    <image id="backgournd3" style="display: none;" src="./backgournd3.jpg" class="imageStyle"
+      mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+    </image>
+    <image id="backgournd4" style="display: none;" src="./backgournd4.jpg" class="imageStyle"
+      mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+    </image> -->
+    <!-- <div style="display: flex;justify-content: center;width: 100%;">
+      <div style="width: 80%;font-size: 15px;text-align: center;">
+        <p>
+          <span onclick="byIndex()" class="canClick">首页</span>&nbsp&nbsp|&nbsp&nbsp
+          <span onclick="callUs()" class="canClick">联系我们</span>&nbsp&nbsp|&nbsp&nbsp
+          <span onclick="aboutUs()" class="canClick">关于我们</span>&nbsp&nbsp|&nbsp&nbsp
+          <span style="color: #D98C32;">主办单位：©剧游（苏州）文化科技发展有限公司 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a
+              href="https://beian.miit.gov.cn/"
+              style="text-decoration:none;color: #D98C32;">网站备案号：苏ICP备2021048789号-1</a></span>
+        </p>
+      </div>
+    </div> -->
+  </div>
+  <script>
+    function callUs() {
+      document.getElementById('backgournd4').style.display = 'none'
+      document.getElementById('backgournd3').style.display = 'block'
+      document.getElementById('backgournd2').style.display = 'none'
+    }
+    function byIndex() {
+      document.getElementById('backgournd4').style.display = 'none'
+      document.getElementById('backgournd3').style.display = 'none'
+      document.getElementById('backgournd2').style.display = 'block'
+    }
+    function aboutUs() {
+      document.getElementById('backgournd4').style.display = 'block'
+      document.getElementById('backgournd3').style.display = 'none'
+      document.getElementById('backgournd2').style.display = 'none'
+    }
+  </script>
+</body>
+
+</html>

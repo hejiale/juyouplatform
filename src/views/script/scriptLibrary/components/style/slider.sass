@@ -1,0 +1,69 @@
+.slider-content
+  @include ver
+
+  &-title
+    padding: 15px
+    text-align: center
+    font-size: 15px
+
+  &-list
+    @include ver
+    max-height: 480px
+    overflow: auto
+    &-item
+      display: flex
+      position: relative
+      padding: 20px 10px
+      cursor: pointer
+      align-items: center
+
+      &-right
+        @include ver
+        width: 70%
+
+        &-propertyTitle
+          span
+            font-size: 14px
+            @include text-overflow-twoLine
+            -webkit-line-clamp: 1
+
+        &-propertyValue
+          font-size: 14px
+          @include text-overflow-twoLine
+          -webkit-line-clamp: 2
+          color: $light-gray
+          margin-top: 5px
+
+        &-note
+          margin-top: 5px
+          font-size: 12px
+          color: red
+
+      &-propertyClear
+        position: absolute
+        right: 0
+        width: 40px
+        height: 40px
+        @include hor-center-center
+
+        img
+          width: 20px
+          height: 20px
+
+      &-propertyEdit
+        position: absolute
+        right: 25px
+        width: 40px
+        height: 40px
+        @include hor-center-center
+
+        img
+          width: 20px
+          height: 20px
+
+.active
+  background: #ECEEF2
+.el-table--fit
+  overflow: auto
+.el-table::before
+  height: 0px
